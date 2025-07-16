@@ -8,10 +8,10 @@
 	<createSlaveProjects value=""/>
 	<ignoreDefaultDeviceSettings value="true"/>
 	<ignoreDefaultCCSSettings value="true"/>
-	<templateProperties value="id=empty_LP_MSPM0G3507_nortos_ticlang.projectspec.empty_LP_MSPM0G3507_nortos_ticlang,buildProfile=release,isHybrid=true"/>
+	<templateProperties value="id=adc12_sequence_conversion_LP_MSPM0G3507_nortos_ticlang.projectspec.adc12_sequence_conversion_LP_MSPM0G3507_nortos_ticlang,buildProfile=release,isHybrid=true"/>
 	<activeTargetConfiguration value="targetConfigs/MSPM0G3507.ccxml"/>
 	<isTargetConfigurationManual value="false"/>
 	<sourceLookupPath value="${COM_TI_MSPM0_SDK_INSTALL_DIR}/source/ti/driverlib"/>
-	<origin value="D:\A_Scholastic\33\ti\mspm0_sdk_2_04_00_06\examples\nortos\LP_MSPM0G3507\driverlib\empty\ticlang\empty_LP_MSPM0G3507_nortos_ticlang.projectspec"/>
-	<filesToOpen value="README.md,empty.syscfg"/>
+	<origin value="D:\A_Scholastic\33\ti\mspm0_sdk_2_04_00_06\examples\nortos\LP_MSPM0G3507\driverlib\adc12_sequence_conversion\ticlang\adc12_sequence_conversion_LP_MSPM0G3507_nortos_ticlang.projectspec"/>
+	<filesToOpen value="adc12_sequence_conversion.syscfg,README.md"/>
 </projectOptions>

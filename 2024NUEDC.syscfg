@@ -11,6 +11,7 @@
  */
 const ADC12  = scripting.addModule("/ti/driverlib/ADC12", {}, false);
 const ADC121 = ADC12.addInstance();
+const Board  = scripting.addModule("/ti/driverlib/Board");
 const I2C    = scripting.addModule("/ti/driverlib/I2C", {}, false);
 const I2C1   = I2C.addInstance();
 const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
@@ -18,36 +19,33 @@ const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
 /**
  * Write custom configuration values to the imported modules.
  */
-ADC121.$name                      = "ADC12_0";
-ADC121.sampClkSrc                 = "DL_ADC12_CLOCK_ULPCLK";
-ADC121.sampClkDiv                 = "DL_ADC12_CLOCK_DIVIDE_8";
-ADC121.samplingOperationMode      = "sequence";
-ADC121.endAdd                     = 3;
-ADC121.repeatMode                 = true;
-ADC121.adcMem0chansel             = "DL_ADC12_INPUT_CHAN_2";
-ADC121.adcMem2chansel             = "DL_ADC12_INPUT_CHAN_7";
-ADC121.adcMem3chansel             = "DL_ADC12_INPUT_CHAN_3";
-ADC121.enabledInterrupts          = ["DL_ADC12_INTERRUPT_MEM3_RESULT_LOADED"];
-ADC121.peripheral.$assign         = "ADC0";
-ADC121.peripheral.adcPin0.$assign = "PA27";
-ADC121.peripheral.adcPin2.$assign = "PA25";
-ADC121.peripheral.adcPin7.$assign = "PA22";
-ADC121.peripheral.adcPin3.$assign = "PA24";
-ADC121.adcPin0Config.$name        = "ti_driverlib_gpio_GPIOPinGeneric0";
-ADC121.adcPin2Config.$name        = "ti_driverlib_gpio_GPIOPinGeneric3";
-ADC121.adcPin7Config.$name        = "ti_driverlib_gpio_GPIOPinGeneric4";
-ADC121.adcPin3Config.$name        = "ti_driverlib_gpio_GPIOPinGeneric5";
+ADC121.$name                 = "ADC12_0";
+ADC121.sampClkSrc            = "DL_ADC12_CLOCK_ULPCLK";
+ADC121.sampClkDiv            = "DL_ADC12_CLOCK_DIVIDE_8";
+ADC121.powerDownMode         = "DL_ADC12_POWER_DOWN_MODE_MANUAL";
+ADC121.adcMem3chansel        = "DL_ADC12_INPUT_CHAN_3";
+ADC121.samplingOperationMode = "sequence";
+ADC121.sampleTime0           = "40 us";
+ADC121.repeatMode            = true;
+ADC121.adcMem1chansel        = "DL_ADC12_INPUT_CHAN_1";
+ADC121.adcMem2chansel        = "DL_ADC12_INPUT_CHAN_2";
+ADC121.endAdd                = 3;
+ADC121.enabledInterrupts     = ["DL_ADC12_INTERRUPT_MEM3_RESULT_LOADED"];
+ADC121.peripheral.$assign    = "ADC0";
+ADC121.adcPin0Config.$name   = "ti_driverlib_gpio_GPIOPinGeneric0";
+ADC121.adcPin1Config.$name   = "ti_driverlib_gpio_GPIOPinGeneric1";
+ADC121.adcPin2Config.$name   = "ti_driverlib_gpio_GPIOPinGeneric2";
+ADC121.adcPin3Config.$name   = "ti_driverlib_gpio_GPIOPinGeneric3";
 
-const Board = scripting.addModule("/ti/driverlib/Board", {}, false);
 
+I2C1.$name                             = "I2C_OLED";
 I2C1.basicEnableController             = true;
 I2C1.basicControllerStandardBusSpeed   = "Fast";
-I2C1.$name                             = "I2C_OLED";
-I2C1.sdaPinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric1";
+I2C1.sdaPinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric4";
 I2C1.sdaPinConfig.hideOutputInversion  = scripting.forceWrite(false);
 I2C1.sdaPinConfig.onlyInternalResistor = scripting.forceWrite(false);
 I2C1.sdaPinConfig.passedPeripheralType = scripting.forceWrite("Digital");
-I2C1.sclPinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric2";
+I2C1.sclPinConfig.$name                = "ti_driverlib_gpio_GPIOPinGeneric5";
 I2C1.sclPinConfig.hideOutputInversion  = scripting.forceWrite(false);
 I2C1.sclPinConfig.onlyInternalResistor = scripting.forceWrite(false);
 I2C1.sclPinConfig.passedPeripheralType = scripting.forceWrite("Digital");
@@ -59,6 +57,10 @@ SYSCTL.forceDefaultClkConfig = true;
  * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
  * re-solve from scratch.
  */
+ADC121.peripheral.adcPin0.$suggestSolution = "PA27";
+ADC121.peripheral.adcPin1.$suggestSolution = "PA26";
+ADC121.peripheral.adcPin2.$suggestSolution = "PA25";
+ADC121.peripheral.adcPin3.$suggestSolution = "PA24";
 Board.peripheral.$suggestSolution          = "DEBUGSS";
 Board.peripheral.swclkPin.$suggestSolution = "PA20";
 Board.peripheral.swdioPin.$suggestSolution = "PA19";

@@ -139,7 +139,7 @@ all: $(OBJS) $(GEN_CMDS)
 2024NUEDC.out: $(OBJS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wl,-m"2024NUEDC.map" -Wl,-i"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source" -Wl,-i"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC" -Wl,-i"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug/syscfg" -Wl,-i"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="2024NUEDC_linkInfo.xml" -Wl,--rom_model -o "2024NUEDC.out" $(ORDERED_OBJS)
+	"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wl,-m"2024NUEDC.map" -Wl,-i"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source" -Wl,-i"D:/A_Scholastic/33/workspace1/2024NUEDC" -Wl,-i"D:/A_Scholastic/33/workspace1/2024NUEDC/Debug/syscfg" -Wl,-i"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="2024NUEDC_linkInfo.xml" -Wl,--rom_model -o "2024NUEDC.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 

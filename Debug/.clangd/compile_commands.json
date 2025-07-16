@@ -1,17 +1,17 @@
 [
    {
-      "directory" : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug",
-      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC\" -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
-      "file"      : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/2024NUEDC.c"
+      "directory" : "D:/A_Scholastic/33/workspace1/2024NUEDC/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/workspace1/2024NUEDC\" -I\"D:/A_Scholastic/33/workspace1/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
+      "file"      : "D:/A_Scholastic/33/workspace1/2024NUEDC/Debug/ti_msp_dl_config.c"
    },
    {
-      "directory" : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug",
-      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC\" -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
-      "file"      : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug/ti_msp_dl_config.c"
+      "directory" : "D:/A_Scholastic/33/workspace1/2024NUEDC/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/workspace1/2024NUEDC\" -I\"D:/A_Scholastic/33/workspace1/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
+      "file"      : "D:/A_Scholastic/33/workspace1/2024NUEDC/2024NUEDC.c"
    },
    {
-      "directory" : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug",
-      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC\" -I\"D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
-      "file"      : "D:/A_Scholastic/33/CCS2024NUEDCworkspace/2024NUEDC/oled/oled.c"
+      "directory" : "D:/A_Scholastic/33/workspace1/2024NUEDC/Debug",
+      "command"   : "clang++ -D__MSPM0G3507__ -I\"D:/A_Scholastic/33/workspace1/2024NUEDC\" -I\"D:/A_Scholastic/33/workspace1/2024NUEDC/Debug\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/third_party/CMSIS/Core/Include\" -I\"D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/armv7em-ti-none-eabihf/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c++/v1\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/include\" -isystem\"D:/ccstheia141/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/include/c\"",
+      "file"      : "D:/A_Scholastic/33/workspace1/2024NUEDC/oled/oled.c"
    }
 ]
