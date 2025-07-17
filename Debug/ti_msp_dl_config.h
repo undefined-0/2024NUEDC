@@ -94,20 +94,20 @@ extern "C" {
 
 
 
-/* Defines for ADC12_0 */
-#define ADC12_0_INST                                                        ADC0
-#define ADC12_0_INST_IRQHandler                                  ADC0_IRQHandler
-#define ADC12_0_INST_INT_IRQN                                    (ADC0_INT_IRQn)
-#define ADC12_0_ADCMEM_0                                      DL_ADC12_MEM_IDX_0
-#define ADC12_0_ADCMEM_0_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
-#define ADC12_0_ADCMEM_0_REF_VOLTAGE_V                                       3.3
-#define ADC12_0_ADCMEM_1                                      DL_ADC12_MEM_IDX_1
-#define ADC12_0_ADCMEM_1_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
-#define ADC12_0_ADCMEM_1_REF_VOLTAGE_V                                       3.3
-#define GPIO_ADC12_0_C0_PORT                                               GPIOA
-#define GPIO_ADC12_0_C0_PIN                                       DL_GPIO_PIN_27
-#define GPIO_ADC12_0_C1_PORT                                               GPIOA
-#define GPIO_ADC12_0_C1_PIN                                       DL_GPIO_PIN_26
+/* Defines for ADC0 */
+#define ADC0_INST                                                           ADC0
+#define ADC0_INST_IRQHandler                                     ADC0_IRQHandler
+#define ADC0_INST_INT_IRQN                                       (ADC0_INT_IRQn)
+#define ADC0_ADCMEM_0                                         DL_ADC12_MEM_IDX_0
+#define ADC0_ADCMEM_0_REF                        DL_ADC12_REFERENCE_VOLTAGE_VDDA
+#define ADC0_ADCMEM_0_REF_VOLTAGE_V                                          3.3
+#define ADC0_ADCMEM_1                                         DL_ADC12_MEM_IDX_1
+#define ADC0_ADCMEM_1_REF                        DL_ADC12_REFERENCE_VOLTAGE_VDDA
+#define ADC0_ADCMEM_1_REF_VOLTAGE_V                                          3.3
+#define GPIO_ADC0_C0_PORT                                                  GPIOA
+#define GPIO_ADC0_C0_PIN                                          DL_GPIO_PIN_27
+#define GPIO_ADC0_C1_PORT                                                  GPIOA
+#define GPIO_ADC0_C1_PIN                                          DL_GPIO_PIN_26
 
 
 /* clang-format on */
@@ -117,7 +117,7 @@ void SYSCFG_DL_initPower(void);
 void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_I2C_OLED_init(void);
-void SYSCFG_DL_ADC12_0_init(void);
+void SYSCFG_DL_ADC0_init(void);
 
 
 #ifdef __cplusplus
