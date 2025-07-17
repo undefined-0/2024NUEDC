@@ -59,7 +59,7 @@ int main(void)
         gCheckADC = false;
         /* Reset index of buffers, set breakpoint to check buffers. */
         if (i >= RESULT_SIZE) {
-            __BKPT(0);
+            // __BKPT(0);
             i = 0;
         }
         else{
@@ -73,7 +73,7 @@ int main(void)
 void ADC12_0_INST_IRQHandler(void)
 {
     switch (DL_ADC12_getPendingInterrupt(ADC12_0_INST)) {
-        case DL_ADC12_IIDX_MEM3_RESULT_LOADED:
+        case DL_ADC12_IIDX_MEM1_RESULT_LOADED:
             gCheckADC = true;
             break;
         default:

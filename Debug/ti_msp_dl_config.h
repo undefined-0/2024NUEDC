@@ -104,20 +104,10 @@ extern "C" {
 #define ADC12_0_ADCMEM_1                                      DL_ADC12_MEM_IDX_1
 #define ADC12_0_ADCMEM_1_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
 #define ADC12_0_ADCMEM_1_REF_VOLTAGE_V                                       3.3
-#define ADC12_0_ADCMEM_2                                      DL_ADC12_MEM_IDX_2
-#define ADC12_0_ADCMEM_2_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
-#define ADC12_0_ADCMEM_2_REF_VOLTAGE_V                                       3.3
-#define ADC12_0_ADCMEM_3                                      DL_ADC12_MEM_IDX_3
-#define ADC12_0_ADCMEM_3_REF                     DL_ADC12_REFERENCE_VOLTAGE_VDDA
-#define ADC12_0_ADCMEM_3_REF_VOLTAGE_V                                       3.3
 #define GPIO_ADC12_0_C0_PORT                                               GPIOA
 #define GPIO_ADC12_0_C0_PIN                                       DL_GPIO_PIN_27
 #define GPIO_ADC12_0_C1_PORT                                               GPIOA
 #define GPIO_ADC12_0_C1_PIN                                       DL_GPIO_PIN_26
-#define GPIO_ADC12_0_C2_PORT                                               GPIOA
-#define GPIO_ADC12_0_C2_PIN                                       DL_GPIO_PIN_25
-#define GPIO_ADC12_0_C3_PORT                                               GPIOA
-#define GPIO_ADC12_0_C3_PIN                                       DL_GPIO_PIN_24
 
 
 /* clang-format on */
