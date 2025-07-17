@@ -14,6 +14,7 @@ ORDERED_OBJS += \
 "./ti_msp_dl_config.o" \
 "./startup_mspm0g350x_ticlang.o" \
 "./bsp/calculate.o" \
+"./bsp/fft.o" \
 "./bsp/oled.o" \
 $(GEN_CMDS__FLAG) \
 -Wl,-ldevice.cmd.genlibs \
@@ -147,8 +148,8 @@ all: $(OBJS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "2024NUEDC.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "bsp\calculate.o" "bsp\oled.o" 
-	-$(RM) "2024NUEDC.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "bsp\calculate.d" "bsp\oled.d" 
+	-$(RM) "2024NUEDC.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "bsp\calculate.o" "bsp\fft.o" "bsp\oled.o" 
+	-$(RM) "2024NUEDC.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "bsp\calculate.d" "bsp\fft.d" "bsp\oled.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

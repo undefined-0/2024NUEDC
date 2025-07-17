@@ -1,16 +1,16 @@
 #ifndef __FFT_H__
 #define __FFT_H__
 
-#define DFT_N 2048 // DFTµãÊı
+#define DFT_N 2048 // DFTç‚¹æ•°
 #define M_PI 3.14159265358979323846
 
-// ¶¨Òå¸´Êı½á¹¹Ìå
+// å®šä¹‰å¤æ•°ç»“æ„ä½“
 typedef struct {
     float real;
     float imag;
 } Complex;
 
-extern Complex s[DFT_N];
+extern Complex complexBuffer[DFT_N];
 
 void FFT(Complex *complexBuffer, int N);
 void RemoveDCBias(Complex *complexBuffer, int N);

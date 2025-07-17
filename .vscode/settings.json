@@ -2,6 +2,8 @@
     "files.associations": {
         "calculate.h": "c",
         "oled.h": "c",
-        "ti_msp_dl_config.h": "c"
+        "ti_msp_dl_config.h": "c",
+        "hamming02048.h": "c",
+        "fft.h": "c"
     }
 }

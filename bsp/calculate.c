@@ -66,3 +66,39 @@ float calculate_power_factor(uint16_t* u_AdcResult, uint16_t* i_AdcResult, int n
     // 返回功率因数（P / S）
     return P / S;
 }
+
+/**
+  * @brief  对输入的 11 个浮点数值进行排序并返回前 5 个最大值的和（最大值平滑算法）
+  * @param  a0~a10   输入的 11 个浮点数值
+  * @retval 前 5 个最大值的累加和
+  */
+float max115(float a0,float a1,float a2,float a3,float a4,float a5,float a6,float a7,float a8,float a9,float a10)
+{
+    int i,j;
+    float tmp;
+    float a[11];
+    a[0]=a0;
+    a[1]=a1;
+    a[2]=a2;
+    a[3]=a3;
+    a[4]=a4;
+    a[5]=a5;
+    a[6]=a6;
+    a[7]=a7;
+    a[8]=a8;
+    a[9]=a9;
+    a[10]=0;//a10;
+    for(i=0;i<11;i++)
+    {
+        for(j=i+1;j<11;j++)
+        {
+            if(a[i]<a[j])
+            {
+                tmp=a[i];
+                a[i]=a[j];
+                a[j]=tmp;
+            }
+        }
+    }
+    return (a[0]+a[1]+a[2]+a[3]+a[4]);
+}

@@ -2,6 +2,7 @@
 "./ti_msp_dl_config.o"
 "./startup_mspm0g350x_ticlang.o"
 "./bsp/calculate.o"
+"./bsp/fft.o"
 "./bsp/oled.o"
 -l"./device_linker.cmd"
 -ldevice.cmd.genlibs

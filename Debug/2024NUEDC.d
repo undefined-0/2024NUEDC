@@ -76,7 +76,9 @@
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
  D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/oled.h \
- D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/calculate.h
+ D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/calculate.h \
+ D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/fft.h \
+ D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/Hamming02048.h
 
 ti_msp_dl_config.h:
 
@@ -229,3 +231,7 @@ D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
 D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/oled.h:
 
 D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/calculate.h:
+
+D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/fft.h:
+
+D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/Hamming02048.h:

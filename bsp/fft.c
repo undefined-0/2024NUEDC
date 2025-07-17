@@ -1,13 +1,13 @@
 #include <math.h>
 #include "fft.h"
 
-Complex complexBuffer[DFT_N] = {0}; // ���帴�����飬�󽫴���FFT������2048�㸵��Ҷ�任������Դ�������
+Complex complexBuffer[DFT_N] = {0}; // 定义复数数组，后将传给FFT函数做2048点傅里叶变换，结果仍存在其中
 
 /**
-  * @brief  ��ȥֱ��ƫ�õ�ʵ��
-  * @param  complexBuffer
-  * @param  N
-  * @retval ��
+  * @brief  从复数数组中减去直流偏置（DC Bias），即去除信号的直流分量
+  * @param  complexBuffer 指向复数数据数组的指针，该数组通常包含经过ADC采样并转换为复数格式的数据
+  * @param  N             数组中元素的总数（即傅里叶变换点数）
+  * @retval 无
   */
 void RemoveDCBias(Complex *complexBuffer, int N) {
     float sumReal = 0.0;
@@ -25,15 +25,15 @@ void RemoveDCBias(Complex *complexBuffer, int N) {
 }
 
 
-// FFT����ʵ��
+// FFT函数实现
 void FFT(Complex *complexBuffer, int N) {
     Complex temp;
     int i, j, k, istep;
     float theta, wr, wi, wpr, wpi;
 
-    RemoveDCBias(complexBuffer, N); // �Ƴ�ֱ��ƫ��
+    RemoveDCBias(complexBuffer, N); // 移除直流偏置
 
-    // λ��ת�û� (Bit-reversal Permutation)
+    // 位反转置换 (Bit-reversal Permutation)
     j = 0;
     for (i = 0; i < N; ++i) {
         if (j > i) {
@@ -49,7 +49,7 @@ void FFT(Complex *complexBuffer, int N) {
         j += m;
     }
 
-    // �������� FFT
+    // 迭代计算 FFT
     int m = 1;
     while (m < N) {
         istep = m << 1;
