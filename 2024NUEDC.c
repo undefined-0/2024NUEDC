@@ -9,11 +9,9 @@
 
 volatile bool gCheckADC;
 
-#define RESULT_SIZE (64)
+#define RESULT_SIZE (2048)
 volatile uint16_t gAdcResult0[RESULT_SIZE];
 volatile uint16_t gAdcResult1[RESULT_SIZE];
-// volatile uint16_t gAdcResult2[RESULT_SIZE];
-// volatile uint16_t gAdcResult3[RESULT_SIZE];
 
 int main(void)
 {
@@ -34,47 +32,38 @@ int main(void)
     // OLED_ShowNum(6,4,15683842,8,2);//无符号整数
     // OLED_ShowHexNum(8,1,33,4,1);//16进制
     // OLED_ShowBinNum(8,6,15,4,1);//2进制
-    OLED_ShowString(1, 1,"1P Power Analyzer", 1);//字符串
+
+    OLED_ShowString(1, 3,"1P Power Analyzer", 1); // 显示标题
     DL_ADC12_startConversion(ADC12_0_INST); // 已配置成多通道连续转换模式，只需要start一次
 
-    while (1) {
-        
-
-        /* Wait until all data channels have been loaded. */
-        while (gCheckADC == false) {
+    while (1) 
+    {
+        // ADC未采样完成时就一直等待
+        while (gCheckADC == false) 
+        { 
             __WFE();
         }
 
-        /* Store ADC Results into their respective buffer */
-        gAdcResult0[i] =
-            DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_0);
-        gAdcResult1[i] =
-            DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_1);
-        // gAdcResult2[i] =
-        //     DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_2);
-        // gAdcResult3[i] =
-        //     DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_3);
+        // ADC采样完成时将结果写入数组
+        gAdcResult0[i] =DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_0);
+        gAdcResult1[i] =DL_ADC12_getMemResult(ADC12_0_INST, DL_ADC12_MEM_IDX_1);
+        i++; // 采样点计数变量自增
+        gCheckADC = false; // 将采样完成标志置false
 
-        i++;
-        gCheckADC = false;
-        /* Reset index of buffers, set breakpoint to check buffers. */
-        if (i >= RESULT_SIZE) {
+        if (i >= RESULT_SIZE) 
+        {
             // __BKPT(0);
             i = 0;
-        }
-        else{
-            ;/*No action required*/
         }
         // DL_ADC12_enableConversions(ADC12_0_INST);
     }
 }
 
-/* Check for the last result to be loaded then change boolean */
 void ADC12_0_INST_IRQHandler(void)
 {
     switch (DL_ADC12_getPendingInterrupt(ADC12_0_INST)) {
-        case DL_ADC12_IIDX_MEM1_RESULT_LOADED:
-            gCheckADC = true;
+        case DL_ADC12_IIDX_MEM1_RESULT_LOADED: // mem1中断，需要与syscfg相配合
+            gCheckADC = true; // 在中断中将采样完成标志置true
             break;
         default:
             break;
