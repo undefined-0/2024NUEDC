@@ -16,5 +16,5 @@
 
 * ADC采样IO
 
-  * PA27 - ADC12 Channel 0 Pin（gAdcResult0）
-  * PA26 - ADC12 Channel 1 Pin（gAdcResult1）
+  * PA27 - ADC12 Channel 0 Pin（AdcResult_U）
+  * PA26 - ADC12 Channel 1 Pin（AdcResult_I）

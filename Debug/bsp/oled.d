@@ -1,6 +1,6 @@
 # FIXED
 
-2024NUEDC.o: ../2024NUEDC.c \
+bsp/oled.o: ../bsp/oled.c ../bsp/oled.h \
  ti_msp_dl_config.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/msp/msp.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/DeviceFamily.h \
@@ -75,8 +75,9 @@
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
- D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/oled.h \
- D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/calculate.h
+ ../bsp/oled_font.h
+
+../bsp/oled.h:
 
 ti_msp_dl_config.h:
 
@@ -226,6 +227,4 @@ D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.
 
 D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
 
-D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/oled.h:
-
-D:/A_Scholastic/33/workspace1/2024NUEDC/bsp/calculate.h:
+../bsp/oled_font.h:

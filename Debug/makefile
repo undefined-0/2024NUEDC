@@ -13,7 +13,8 @@ ORDERED_OBJS += \
 "./2024NUEDC.o" \
 "./ti_msp_dl_config.o" \
 "./startup_mspm0g350x_ticlang.o" \
-"./oled/oled.o" \
+"./bsp/calculate.o" \
+"./bsp/oled.o" \
 $(GEN_CMDS__FLAG) \
 -Wl,-ldevice.cmd.genlibs \
 -Wl,-llibc.a \
@@ -26,9 +27,9 @@ RMDIR := RMDIR /S/Q
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir_vars.mk
--include oled/subdir_vars.mk
+-include bsp/subdir_vars.mk
 -include subdir_rules.mk
--include oled/subdir_rules.mk
+-include bsp/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -146,8 +147,8 @@ all: $(OBJS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "2024NUEDC.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "oled\oled.o" 
-	-$(RM) "2024NUEDC.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "oled\oled.d" 
+	-$(RM) "2024NUEDC.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "bsp\calculate.o" "bsp\oled.o" 
+	-$(RM) "2024NUEDC.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "bsp\calculate.d" "bsp\oled.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

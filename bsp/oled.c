@@ -5,8 +5,6 @@
 
 #define OLED_ADDR 0x3C
 
-void OLED_I2C_Init(void) {}
-
 // 向OLED寄存器地址写一个byte的数据
 int I2C_WriteByte(uint8_t addr, uint8_t data) {
   uint8_t buff[2] = {0};
@@ -45,7 +43,6 @@ void WriteData(unsigned char I2C_Data) { I2C_WriteByte(0x40, I2C_Data); }
 
 // 厂家初始化代码
 void OLED_Init(void) {
-  OLED_I2C_Init();
   delay_cycles(16000000);
   WriteCmd(0xAE); // display off
   WriteCmd(0x20); // Set Memory Addressing Mode

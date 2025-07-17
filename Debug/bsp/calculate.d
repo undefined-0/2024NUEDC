@@ -1,6 +1,6 @@
 # FIXED
 
-oled/oled.o: ../oled/oled.c ../oled/oled.h \
+bsp/calculate.o: ../bsp/calculate.c ../bsp/calculate.h \
  ti_msp_dl_config.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/msp/msp.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/DeviceFamily.h \
@@ -74,10 +74,9 @@ oled/oled.o: ../oled/oled.c ../oled/oled.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_vref.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
- D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
- ../oled/oled_font.h
+ D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h
 
-../oled/oled.h:
+../bsp/calculate.h:
 
 ti_msp_dl_config.h:
 
@@ -226,5 +225,3 @@ D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h:
 D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h:
 
 D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
-
-../oled/oled_font.h:
