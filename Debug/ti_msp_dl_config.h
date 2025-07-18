@@ -110,6 +110,18 @@ extern "C" {
 #define GPIO_ADC0_C1_PIN                                          DL_GPIO_PIN_26
 
 
+
+/* Port definition for Pin Group GPIO_KEY */
+#define GPIO_KEY_PORT                                                    (GPIOA)
+
+/* Defines for PIN_KEY: GPIOA.2 with pinCMx 7 on package pin 42 */
+// pins affected by this interrupt request:["PIN_KEY"]
+#define GPIO_KEY_INT_IRQN                                       (GPIOA_INT_IRQn)
+#define GPIO_KEY_INT_IIDX                       (DL_INTERRUPT_GROUP1_IIDX_GPIOA)
+#define GPIO_KEY_PIN_KEY_IIDX                                (DL_GPIO_IIDX_DIO2)
+#define GPIO_KEY_PIN_KEY_PIN                                     (DL_GPIO_PIN_2)
+#define GPIO_KEY_PIN_KEY_IOMUX                                    (IOMUX_PINCM7)
+
 /* clang-format on */
 
 void SYSCFG_DL_init(void);
@@ -118,6 +130,7 @@ void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_I2C_OLED_init(void);
 void SYSCFG_DL_ADC0_init(void);
+
 
 
 #ifdef __cplusplus

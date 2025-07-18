@@ -12,6 +12,8 @@
 const ADC12  = scripting.addModule("/ti/driverlib/ADC12", {}, false);
 const ADC121 = ADC12.addInstance();
 const Board  = scripting.addModule("/ti/driverlib/Board");
+const GPIO   = scripting.addModule("/ti/driverlib/GPIO", {}, false);
+const GPIO1  = GPIO.addInstance();
 const I2C    = scripting.addModule("/ti/driverlib/I2C", {}, false);
 const I2C1   = I2C.addInstance();
 const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
@@ -36,9 +38,16 @@ ADC121.sampleTime1                       = "10 us";
 ADC121.peripheral.$assign                = "ADC0";
 ADC121.adcPin0Config.$name               = "ti_driverlib_gpio_GPIOPinGeneric0";
 ADC121.adcPin0Config.hideOutputInversion = scripting.forceWrite(false);
-ADC121.adcPin1Config.$name               = "ti_driverlib_gpio_GPIOPinGeneric1";
 ADC121.adcPin1Config.hideOutputInversion = scripting.forceWrite(false);
+ADC121.adcPin1Config.$name               = "ti_driverlib_gpio_GPIOPinGeneric1";
 
+
+GPIO1.$name                         = "GPIO_KEY";
+GPIO1.associatedPins[0].$name       = "PIN_KEY";
+GPIO1.associatedPins[0].direction   = "INPUT";
+GPIO1.associatedPins[0].interruptEn = true;
+GPIO1.associatedPins[0].polarity    = "FALL";
+GPIO1.associatedPins[0].pin.$assign = "PA2";
 
 I2C1.$name                             = "I2C_OLED";
 I2C1.basicEnableController             = true;

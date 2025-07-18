@@ -18,3 +18,9 @@
 
   * PA27 - ADC12 Channel 0 Pin（AdcResult_U）
   * PA26 - ADC12 Channel 1 Pin（AdcResult_I）
+
+
+* 外部按键输入
+
+  *   PA2 - 按下则匝数N自增
+      *   N的范围：1~10

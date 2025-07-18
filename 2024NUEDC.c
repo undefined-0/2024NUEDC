@@ -27,13 +27,19 @@ float maxData; // FFT后最大值
 int baseI; // 基波位置
 int cntI; // 谐波计数器
 
+int N = 1; // 电流互感器匝数
+
 // ADC采集数组
 volatile uint16_t AdcResult_U[RESULT_SIZE]; // 电压
 volatile uint16_t AdcResult_I[RESULT_SIZE]; // 电流
 
+// 为在OLED上显示结果而设的缓冲区
+char buffer[50];
+
 int main(void)
 {
     SYSCFG_DL_init();
+    NVIC_EnableIRQ(GPIO_KEY_INT_IRQN); // 使能外部中断（按键用）
     NVIC_EnableIRQ(ADC0_INST_INT_IRQN); // 使能ADC中断
 
     ADC_conv_cplt_flag  = false;
@@ -79,17 +85,7 @@ int main(void)
             // 计算功率因数
             float power_factor = calculate_power_factor(AdcResult_U, AdcResult_I, RESULT_SIZE);
 
-            // 显示在OLED上
-            char buffer[50];
-
-            // OLED_ShowString(1, 1, "U_rms:", 1);
-            // sprintf(buffer, "%.2f V", U_rms*3.3/4096);
-            // OLED_ShowString(1, 8, buffer, 1);
-
-            // OLED_ShowString(2, 1, "I_rms:", 1);
-            // sprintf(buffer, "%.2f A", I_rms*3.3/4096);
-            // OLED_ShowString(2, 8, buffer, 1);
-
+            // 在OLED上显示
             sprintf(buffer, "rms: %.2fV %.2fA", U_rms*3.3/4096, I_rms*3.3/4096);
             OLED_ShowString(1, 1, buffer, 1);
 
@@ -173,13 +169,12 @@ int main(void)
             }
             res_THD = sqrt(res_THD)/(res_Af[1]);
 
-            sprintf(buffer, "THD: %.2f%%", res_THD * 100); // THD 一般以百分比显示，所以乘以100并加上%。
+            sprintf(buffer, "THD: %.2f%%  N: %d", res_THD * 100, N); // THD 一般以百分比显示，所以乘以100并加上%。
             OLED_ShowString(3, 1, buffer, 1);
 
-            //OLED_ShowString(5, 1, "Harmonics:", 1);
-
-            // 显示 10 个数据，分布在第 4~8 行，每行显示 2 个数据
-            for (int i = 1; i <= 10; i++) {
+            // 显示 1~10 次谐波数据，分布在第 4~8 行，每行显示 2 个数据
+            for (int i = 1; i <= 10; i++) 
+            {
                 int row = 4 + (i - 1) / 2;      // 每两个数据换一行，从第 4 行开始
                 int col = ((i - 1) % 2) * 10 + 1; // 每行显示两个数据，列位置为 1 和 9
 
@@ -190,13 +185,32 @@ int main(void)
     }
 }
 
-void ADC0_INST_IRQHandler(void)
+void ADC0_INST_IRQHandler(void) // ADC转换完成中断处理函数
 {
-    switch (DL_ADC12_getPendingInterrupt(ADC0_INST)) {
+    switch (DL_ADC12_getPendingInterrupt(ADC0_INST)) 
+    {
         case DL_ADC12_IIDX_MEM1_RESULT_LOADED: // mem1中断，需要与syscfg中的配置相配合
             ADC_conv_cplt_flag = true; // 在中断中将采样完成标志置true
             break;
         default:
             break;
+    }
+}
+
+void GROUP1_IRQHandler(void) // 外部中断（按键触发）处理函数
+{
+    uint32_t gpioA = DL_GPIO_getEnabledInterruptStatus(GPIOA, GPIO_KEY_PIN_KEY_PIN); // 获取当前GPIO中断状态
+    if ((gpioA & GPIO_KEY_PIN_KEY_PIN) == GPIO_KEY_PIN_KEY_PIN) // 若PA2引脚被触发（按键按下）
+    {
+        N++; // 增加匝数
+        if (N == 11) 
+        {
+            // 清除掉屏幕上“10”的个位残留的0
+            sprintf(buffer, "    ");
+            OLED_ShowString(3, 18, buffer, 1);
+            // 将匝数N置为1
+            N = 1;
+        }
+        DL_GPIO_clearInterruptStatus(GPIOA, GPIO_KEY_PIN_KEY_PIN); // 清除中断标志
     }
 }
