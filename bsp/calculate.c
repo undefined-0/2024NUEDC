@@ -39,7 +39,7 @@ float calculate_rms_dc_removed(uint16_t* AdcResult, float avg, int num_of_sample
   * @param  num_of_samples 数组中采样点的数量
   * @retval 功率因数，范围 [0, 1]，类型为 float
   */
-float calculate_power_factor(uint16_t* u_AdcResult, uint16_t* i_AdcResult, int num_of_samples) 
+float calculate_power_factor(volatile uint16_t* u_AdcResult, volatile  uint16_t* i_AdcResult, int num_of_samples) 
 {
     // 计算电压均值 u_avg，计算电流均值 i_avg，对应点相乘
     float u_avg = calculate_avg(u_AdcResult, num_of_samples);
