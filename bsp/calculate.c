@@ -61,7 +61,7 @@ float calculate_power_factor(volatile uint16_t* u_AdcResult, volatile  uint16_t*
     // res_rms_I = (kI * I_rms + bI);
 
     // 视在功率 S = 电压有效值与电流有效值的乘积
-    float S = U_rms * I_rms;
+    S = U_rms * I_rms;
 
     // 返回功率因数（P / S）
     return P / S;

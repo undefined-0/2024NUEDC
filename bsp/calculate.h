@@ -5,6 +5,7 @@
 
 
 float P; // 有功功率
+float S; // 视在功率
 
 float calculate_avg(uint16_t* ADCresult, int num_of_samples);
 float calculate_rms_dc_removed(uint16_t* ADCresult, float avg, int num_of_samples);

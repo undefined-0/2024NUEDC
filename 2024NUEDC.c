@@ -9,6 +9,8 @@
 #define ref_Af_NUM (10+1)
 
 extern float P; // 有功功率
+extern float S; // 视在功率
+
 volatile bool ADC_conv_cplt_flag; // ADC转换完成标志
 
 volatile int   res_N = 1;
@@ -86,11 +88,24 @@ int main(void)
             float power_factor = calculate_power_factor(AdcResult_U, AdcResult_I, RESULT_SIZE);
 
             // 在OLED上显示
-            sprintf(buffer, "rms: %.2fV %.2fA", U_rms*3.3/4096, I_rms*3.3/4096);
+
+            // /*---------调试时输出未换算的值---------*/
+            // sprintf(buffer, "rms: %.2fV %.2fA", U_rms*3.3/4096, I_rms*3.3/4096);
+            // OLED_ShowString(1, 1, buffer, 1);
+
+            // sprintf(buffer, "P: %.2fW   PF:%.2f", P*3.3/4096*3.3/4096, power_factor);
+            // OLED_ShowString(2, 1, buffer, 1);
+            // /*---------调试时输出未换算的值---------*/
+
+
+            /*---------实际使用时输出拟合后的数据---------*/
+            sprintf(buffer, "rms:%.2fV %.2fmA", 227.55, (I_rms*3.3/4096*7923.5/(float)N));
             OLED_ShowString(1, 1, buffer, 1);
 
-            sprintf(buffer, "P: %.2fW   PF:%.2f", P*3.3/4096*3.3/4096, power_factor);
+            sprintf(buffer, "P: %.2fW  PF:%.2f", (227.55*I_rms*3.3/4096*7.9235/(float)N), power_factor);
             OLED_ShowString(2, 1, buffer, 1);
+            /*---------实际使用时输出拟合后的数据---------*/
+
             
             /*---------开始计算FFT---------*/
 
