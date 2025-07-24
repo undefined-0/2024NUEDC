@@ -16,8 +16,8 @@
 
 * ADC采样IO
 
-  * PA27 - ADC12 Channel 0 Pin（AdcResult_U）
-  * PA26 - ADC12 Channel 1 Pin（AdcResult_I）
+  * PA27 - ADC0 Channel 0 Pin（AdcResult_U）
+  * PA26 - ADC0 Channel 1 Pin（AdcResult_I）
 
 
 * 外部按键输入
