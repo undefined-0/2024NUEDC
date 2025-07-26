@@ -220,11 +220,12 @@ void GROUP1_IRQHandler(void) // 外部中断（按键触发）处理函数
         N++; // 增加匝数
         if (N == 11) 
         {
-            // 清除掉屏幕上“10”的个位残留的0
-            sprintf(buffer, "    ");
-            OLED_ShowString(3, 18, buffer, 1);
             // 将匝数N置为1
             N = 1;
+            // 清除掉屏幕上“10”的个位残留的0
+            sprintf(buffer, "THD: %.2f%%  N: %d ", res_THD * 100, N);
+            OLED_ShowString(3, 1, buffer, 1);
+            
         }
         DL_GPIO_clearInterruptStatus(GPIOA, GPIO_KEY_PIN_KEY_PIN); // 清除中断标志
     }
